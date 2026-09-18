@@ -24,13 +24,18 @@
     <button onclick="add('7')">7</button>
     <button onclick="add('8')">8</button>
     <button onclick="add('9')">9</button>
-    <button onclick="add('*')">*</buttton>
+    <button onclick="add('*')">×</buttton>
 
      <br><br>
     <button onclick="add('0')">0</button>
-    <button onclick="add('/')">/</button>
+    <button onclick="add('00')">00</button>
+     <button onclick="add('.')">.</button>
+    <button onclick="add('/')">÷</button>
     <button onclick="clearDisplay()">C</button>
-    <button onclick="calculate()">=</buttton>
+    <button onclick="deletelast()">⌫</button>
+    <button onclick="positiveNegative()">+/-</button>
+    <button onclick="calculate()">=</button>
+  
 
     <script>
     function add(value) {
@@ -42,6 +47,16 @@ function calculate() {
 function clearDisplay() {
     document.getElementById("display").value="";
 }
+function deletelast() {
+    display.value=display.value.slice(0,-1);
+}
+function positiveNegative() {
+    let display=document.getElementById("display");
+    if(display.value !=="") {
+        display.value= -Number(display.value);
+    }
+}
+
 </script>
 
 </div>
